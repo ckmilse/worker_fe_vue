@@ -11,7 +11,7 @@ var transferOpt = [{
 }];
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/app.main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
@@ -36,10 +36,16 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/
         }, {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+        }, {
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader!sass-loader'
+        },{
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]?[hash]'
+                name: '[path][name].[ext]?[hash]'
             }
         }, {
             test: /\.js$/,
