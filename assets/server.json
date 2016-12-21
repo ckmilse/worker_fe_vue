@@ -1,0 +1,6 @@
+{
+    "testApi":{
+        "serve": "/dist/data/test2.json",
+        "prod": "http://www.baidu.com"
+    }
+}
